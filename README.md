@@ -1,7 +1,5 @@
 Tractian Flutter Challenge 2022
 
-Time: 2 days.
-
 
 
 Loading Screen:
@@ -86,3 +84,5 @@ Models separated by features as well (Work Orders and Assets).
 I used MODULAR, MVC pattern with the abstraction of all repositories.
 Contains an 'utils' folder, with global components, singletons and design classes
 
+
+Time: 2 days.
