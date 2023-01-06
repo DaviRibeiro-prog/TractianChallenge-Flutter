@@ -1,11 +1,6 @@
-import 'dart:math';
-import 'dart:ui';
-
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:intl/intl.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 import 'package:tractian_challenge/features/assets/components/asset_orders_dialog_component.dart';
 import 'package:tractian_challenge/features/assets/components/status_container_component.dart';

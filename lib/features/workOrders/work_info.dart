@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:tractian_challenge/features/workOrders/components/change_text_dialog.dart';
@@ -184,18 +185,30 @@ class _WorkInfoPageState extends State<WorkInfoPage> {
               Row(
                 children: [
                   SizedBox(
-                    width: 60,
-                    height: 60,
-                    child: CircleAvatar(
-                      backgroundImage: NetworkImage(mainSingleton.assets
+                    height: 90,
+                    width: 90,
+                    child: CachedNetworkImage(
+                      imageUrl: mainSingleton.assets
                           .firstWhere(
                               (element) => element.id == workOrder!.assetId)
-                          .image),
+                          .image,
+                      imageBuilder: (context, imageProvider) => Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(90),
+                          image: DecorationImage(
+                            image: imageProvider,
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      ),
+                      placeholder: (context, url) =>
+                          CircularProgressIndicator(),
+                      errorWidget: (context, url, error) => Icon(Icons.error),
                     ),
                   ),
                   SizedBox(width: 15),
                   SizedBox(
-                    width: MediaQuery.of(context).size.width / 1.5,
+                    width: MediaQuery.of(context).size.width / 1.7,
                     child: Text(
                       mainSingleton.assets
                           .firstWhere(
